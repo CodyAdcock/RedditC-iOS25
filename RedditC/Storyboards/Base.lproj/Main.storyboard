@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yVJ-g3-f3C">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SubReddit Name (I Hope)-->
+        <scene sceneID="elX-G2-Ver">
+            <objects>
+                <tableViewController id="KtF-0G-LTF" customClass="PostTableViewController" customModule="RedditC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pr7-C3-wQA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search a subreddit" id="EBh-Va-Y6Y">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="151" id="tue-F6-iqE" customClass="PostTableViewCell" customModule="RedditC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="151"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tue-F6-iqE" id="hN8-Uo-bOB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xw4-ln-uI2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="151"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Post" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htC-jU-nvC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔼 Upvotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8c-1v-RT1">
+                                                    <rect key="frame" x="0.0" y="50.5" width="414" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💬 Comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m4-G0-eGH">
+                                                    <rect key="frame" x="0.0" y="100.5" width="414" height="50.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="xw4-ln-uI2" firstAttribute="centerY" secondItem="tue-F6-iqE" secondAttribute="centerY" id="Bz6-Ds-CFU"/>
+                                    <constraint firstItem="xw4-ln-uI2" firstAttribute="width" secondItem="tue-F6-iqE" secondAttribute="width" id="cet-0C-bhO"/>
+                                    <constraint firstItem="xw4-ln-uI2" firstAttribute="centerX" secondItem="tue-F6-iqE" secondAttribute="centerX" id="mVz-Gs-1y5"/>
+                                    <constraint firstItem="xw4-ln-uI2" firstAttribute="height" secondItem="tue-F6-iqE" secondAttribute="height" id="yap-5H-3c6"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="commentsLabel" destination="1m4-G0-eGH" id="G6h-eP-SHe"/>
+                                    <outlet property="titleLabel" destination="htC-jU-nvC" id="bm3-KI-aJr"/>
+                                    <outlet property="upvotesLabel" destination="P8c-1v-RT1" id="e6k-0K-uG2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KtF-0G-LTF" id="qoh-rs-423"/>
+                            <outlet property="delegate" destination="KtF-0G-LTF" id="R3n-sT-KGE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="SubReddit Name (I Hope)" id="Qqu-9A-hfd"/>
+                    <connections>
+                        <outlet property="redditSearchBar" destination="EBh-Va-Y6Y" id="iML-zb-53D"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3h-W1-Mfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979.71014492753636" y="855.80357142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Db4-pk-EbU">
+            <objects>
+                <navigationController id="yVJ-g3-f3C" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Odl-66-Dis">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KtF-0G-LTF" kind="relationship" relationship="rootViewController" id="2UP-Pg-gxJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7F-ZO-w8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="856"/>
+        </scene>
+    </scenes>
+</document>
